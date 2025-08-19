@@ -13,15 +13,19 @@ float densid1,calcpib1;
 
 int carta2;
 char codgcarta2 [50];
+char nomepais1 [70];
 char estado2 [50];
 char cidade2 [50];
 float populacao2,area2,Pib2;
 float numpontoturst2;
 float densid2,calcpib2,superpoder1,superpoder2;
 int resultado;
-int main () {
-    
+int escolha1,escolha2;
+ 
 
+int main () {
+
+    
    
 
 
@@ -77,7 +81,8 @@ printf ("Digite o numero da Primeira carta\n");
    
     printf ("Digite o codigo da carta\n");
    scanf(" %[^\n]",codgcarta2);
-    printf ("Digite a cidade\n");
+   
+   printf ("Digite a cidade\n");
    scanf(" %[^\n]",cidade2);
 
     printf ("Digite a tanto de populacao\n");
@@ -111,19 +116,119 @@ printf ("Digite o numero da Primeira carta\n");
    printf ("PIB per Capita: %.2f  de reais\n",calcpib2);
 
    
+   printf ("****** JOGADOR, Agora vamos fazer a comparaçao dos Atributos ****** \n");
+   printf ("Digite para o nome do pais\n");
+   scanf("%s",&nomepais1);
+   printf ("Digite 1 para POPULACÃ0\n");
+   printf ("Digite 2 para ÁREA\n");
+   printf ("Digite 3 para PIB\n");
+   printf ("Digite 4 para NUMERO DE PONTOS TURISTICOS\n");
+   printf ("Digite 5 para DENSIDADE DEMOGRAFICA\n");
+   scanf ("%d",&escolha1);
 
-   if (populacao1 > populacao2){
+
+   switch (escolha1)
+   {
+   case 1: 
+     printf ("Você escolheu POPULAÇÃO\n");
+    break;
+   case 2:
+     printf ("Você escolheu ÁREA\n");
+    break; 
+   case 3:
+     printf ("Você escolheu PIB\n");
+    break; 
+   case 4:
+     printf ("Você escolheu NUMERO DE PONTO TURISTICO\n");
+    break; 
+   case 5:
+     printf ("Você escolheu DENSIDADE DEMOGRÁFICA\n");
+    break;    
+   default:
+     printf ("OPÇÃO INVALIDA !\n");
+    break;
+   }
+
+
+
+    if (escolha1 ==1 && populacao1 > populacao2){
+       printf ("Nome do Pais: %s \n",nomepais1); 
        printf (" Comparação de cartas (Atributo: População):\n");
        printf ("Carta 1 - %s %.2f\n",cidade1,populacao1,"\n");
        printf ("Carta 2 - %s %.2f\n", cidade2,populacao2,"\n");
        printf ("Resultado: Carta 1 %s venceu ! \n", cidade1);
-   } else{
-   printf (" Comparação de cartas (Atributo: População):\n");
+   } else if(escolha1 ==1 && populacao1 < populacao2){
+       printf ("Nome do Pais: %s \n",nomepais1); 
+       printf (" Comparação de cartas (Atributo: População):\n");
        printf ("Carta 1 - %s %.2f\n" ,cidade1,populacao1,"\n");
        printf ("Carta 2 - %s %.2f\n", cidade2,populacao2,"\n");
        printf ("Resultado: Carta 2: %s VENCEU !\n", cidade2);
+   } else if (escolha1 == 1 && populacao1 == populacao2){
+       printf("EMPATE !! \n");
+
    }
-   
+    if (escolha1 ==2 && area1 > area2){
+       printf ("Nome do Pais: %s \n",nomepais1);  
+       printf (" Comparação de cartas (Atributo: População):\n");
+       printf ("Carta 1 - %s %.2f\n",cidade1,area1,"\n");
+       printf ("Carta 2 - %s %.2f\n", cidade2,area2,"\n");
+       printf ("Resultado: Carta 1 %s venceu ! \n", cidade1);
+   } else if (escolha1 ==2 && area1 < area2) {
+       printf ("Nome do Pais: %s \n",nomepais1);  
+       printf (" Comparação de cartas (Atributo: População):\n");
+       printf ("Carta 1 - %s %.2f\n" ,cidade1,area1,"\n");
+       printf ("Carta 2 - %s %.2f\n", cidade2,area2,"\n");
+       printf ("Resultado: Carta 2: %s VENCEU !\n", cidade2);
+   } else if (escolha2 == 2 && area1 == area2){
+      printf ("EMPATE !!");
+   }
+
+     if (escolha1 ==3 && Pib1 > Pib2){
+       printf ("Nome do Pais: %s \n",nomepais1);   
+       printf (" Comparação de cartas (Atributo: População):\n");
+       printf ("Carta 1 - %s %.2f\n",cidade1,Pib1,"\n");
+       printf ("Carta 2 - %s %.2f\n", cidade2,Pib2,"\n");
+       printf ("Resultado: Carta 1 %s venceu ! \n", cidade1);
+    } else if (escolha1 ==3 && Pib1 < Pib2){
+       printf ("Nome do Pais: %s \n",nomepais1); 
+       printf (" Comparação de cartas (Atributo: População):\n");
+       printf ("Carta 1 - %s %.2f\n" ,cidade1,Pib1,"\n");
+       printf ("Carta 2 - %s %.2f\n", cidade2,Pib2,"\n");
+       printf ("Resultado: Carta 2: %s VENCEU !\n", cidade2);
+   } else if (escolha2 == 3 && Pib1 == Pib2){
+      printf ("EMPATE !!");
+   }
+   if (escolha1 ==4 && numpontoturst1 > numpontoturst2){
+       printf ("Nome do Pais: %s \n",nomepais1); 
+       printf (" Comparação de cartas (Atributo: População):\n");
+       printf ("Carta 1 - %s %df\n",cidade1,numpontoturst1,"\n");
+       printf ("Carta 2 - %s %df\n", cidade2,numpontoturst2,"\n");
+       printf ("Resultado: Carta 1 %s venceu ! \n", cidade1);
+   } else if(escolha1 ==4 && numpontoturst1 < numpontoturst2){
+       printf ("Nome do Pais: %s \n",nomepais1); 
+       printf (" Comparação de cartas (Atributo: População):\n");
+       printf ("Carta 1 - %s %d\n" ,cidade1,numpontoturst1,"\n");
+       printf ("Carta 2 - %s %d\n", cidade2,numpontoturst2,"\n");
+       printf ("Resultado: Carta 2: %s VENCEU !\n", cidade2);
+   } else if (escolha2 == 4 && numpontoturst1 == numpontoturst2){
+      printf ("EMPATE !!");
+   }   
+
+    if (escolha1 ==5 && densid1 < densid2){
+       printf ("Nome do Pais: %s \n",nomepais1);  
+       printf (" Comparação de cartas (Atributo: População):\n");
+       printf ("Carta 1 - %s %df\n",cidade1,densid1,"\n");
+       printf ("Carta 2 - %s %df\n", cidade2,densid2,"\n");
+       printf ("Resultado: Carta 1 %s venceu ! \n", cidade1);
+   } else if (escolha1 ==5 && densid1 > densid2){
+       printf ("Nome do Pais: %s \n",nomepais1);  
+       printf (" Comparação de cartas (Atributo: População):\n");
+       printf ("Carta 1 - %s %.2f\n" ,cidade1,densid1,"\n");
+       printf ("Carta 2 - %s %.2f\n", cidade2,densid2,"\n");
+       printf ("Resultado: Carta 2: %s VENCEU !\n", cidade2);
+   } else if (escolha2 == 4 && densid1 == densid2){
+      printf ("EMPATE !!");
+   }
 
 return 0;
 }
